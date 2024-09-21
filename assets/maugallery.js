@@ -1,3 +1,4 @@
+// Fonction auto-exécutante encapsulant le code JQUERY
 (function($) {
   $.fn.mauGallery = function(options) {
     var options = $.extend($.fn.mauGallery.defaults, options);
@@ -59,7 +60,7 @@
 
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
     $(".gallery").on("click", ".mg-prev", () =>
-      $.fn.mauGallery.methods.prevImage(options.lightboxId)
+            $.fn.mauGallery.methods.prevImage(options.lightboxId)
     );
     $(".gallery").on("click", ".mg-next", () =>
       $.fn.mauGallery.methods.nextImage(options.lightboxId)
@@ -119,14 +120,24 @@
         .attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
+
+    /**
+     * 
+     */
     prevImage() {
       let activeImage = null;
+      // Trouve quelle image est active dans la modale
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
-          activeImage = $(this);
+          activeImage = $(this); // Object JQUERY
+          //console.log($(this));
+
+          /*****************************************************
+           **** Sortir de la boucle une fois l'image trouvé ****
+           *****************************************************/
         }
       });
-      let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
+      let activeTag = $(".tags-bar span.active-tag").data("images-toggle"); // Si filtre 'Tous' => activeTag = "all"
       let imagesCollection = [];
       if (activeTag === "all") {
         $(".item-column").each(function() {
@@ -141,23 +152,37 @@
               .children("img")
               .data("gallery-tag") === activeTag
           ) {
-            imagesCollection.push($(this).children("img"));
+            imagesCollection.push($(this).children("img"));// imagesCollection est un tableau contenant des objets Jquery
           }
         });
       }
+
+      // $(imagesCollection).each(function() {
+      //   console.log($(this))
+      // })
+
       let index = 0,
         next = null;
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i ;
+          index = i ; // index de l'image du tableau imagesCollection actuellement ouverte dans la lightbox
+
+          /*****************************************************
+           **** Sortir de la boucle une fois l'image trouvé ****
+           *****************************************************/
         }
       });
       next =
-        imagesCollection[index] ||
+        imagesCollection[index-1] || // 1er erreur, il manquait le -1
         imagesCollection[imagesCollection.length - 1];
+      console.log(next)
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+
+    /**
+     * 
+     */
     nextImage() {
       let activeImage = null;
       $("img.gallery-item").each(function() {
@@ -192,9 +217,16 @@
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+      next = imagesCollection[index+1] || imagesCollection[0]; // 2eme erreur, il manquait le +1
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+
+    /**
+     * 
+     * @param {*} gallery 
+     * @param {*} lightboxId 
+     * @param {*} navigation 
+     */
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
@@ -218,6 +250,13 @@
                 </div>
             </div>`);
     },
+
+    /**
+     * 
+     * @param {*} gallery 
+     * @param {*} position 
+     * @param {*} tags 
+     */
     showItemTags(gallery, position, tags) {
       var tagItems =
         '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
@@ -235,6 +274,11 @@
         console.error(`Unknown tags position: ${position}`);
       }
     },
+
+    /**
+     * 
+     * @returns 
+     */
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
         return;
