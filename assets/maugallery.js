@@ -215,7 +215,7 @@
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i;
-        }
+        }// 1er erreur, il manquait le -1
       });
       next = imagesCollection[index+1] || imagesCollection[0]; // 2eme erreur, il manquait le +1
       $(".lightboxImage").attr("src", $(next).attr("src"));
