@@ -102,7 +102,7 @@ body {
 }
 .nav-pills .nav-link.active-tag, .nav-pills .show > .nav-link {  /* 3eme erreur: active -> active-tag */
 	color: #fff;
-	background-color: #BEB45A;
+	background-color: #5F5926/*#BEB45A*/;
 	border-radius:0 ;
 }
 .nav-pills .nav-link {
