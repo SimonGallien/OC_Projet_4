@@ -240,7 +240,7 @@ form textarea {
 	margin-bottom: 20px;
 }
 input[type="submit"] {
-	background-color: #5F5926/*#BEB45A*/;
+	background-color: #fff/*#BEB45A*/;
 	padding: .5em 1em
 }
 
