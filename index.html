@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+	<meta charset="UTF-8">
 	<title>Photographe professionnelle - Shooting photo, retouches et albums personnalisés</title>
 	<meta name="language" content="fr-FR">
 	<meta name="description" content="Photographe professionnelle proposant des shootings photo, des retouches et l'impression d'albums photos. Basée en Île-de-France.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script type="application/ld+json">
+
+	<!-- Twitter card -->
+	<meta name="twitter:card" content="summary_large_image" >
+	<!-- <meta name="twitter:site" content="@monCompteTwitter" /> -->
+	<meta name="twitter:title" content="Nina Carducci - Photographe Professionnelle" >
+	<meta name="twitter:description" content="Photographe professionnelle proposant des shootings photo, des retouches et l'impression d'albums photos. Basée en Île-de-France." >
+	<meta name="twitter:image" content="https://simongallien.github.io/OC_Projet_4/assets/images/nina_twitter_card.jpg" >
+	<meta name="twitter:url" content="https://simongallien.github.io/OC_Projet_4/" >
+	<!-- End of twitter card -->
+	<!-- Open Graph -->
+	<meta property="og:site_name" content="MonSiteWeb" >
+	<meta property="og:type" content="website" >
+	<meta property="og:url" content="http://monsiteweb.fr/ma-page-qui-dechire" >
+	<meta property="og:title" content="MonSiteWeb - Plein d'articles géniaux" >
+	<meta property="og:description" content="Découvrez plein d'articles qui vont vous plaire. C'est certain !" >
+	<meta property="og:image" content="https://monsiteweb/images/uneimage.jpg" >
+	<!-- End of Open Graph -->
+	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/style.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
+	<script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
+	<script src="./assets/maugallery.min.js" defer></script>
+	<script src="./assets/scripts.js" defer></script>
+	<script type="application/ld+json" defer>
 		{
 			"@context": "https://schema.org",
 			"@type": "LocalBusiness",
@@ -22,32 +49,6 @@
 			"telephone": "+33556677889"
 		}
 	</script>
-	<!-- Twitter card -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<!-- <meta name="twitter:site" content="@monCompteTwitter" /> -->
-	<meta name="twitter:title" content="Nina Carducci - Photographe Professionnelle" />
-	<meta name="twitter:description" content="Photographe professionnelle proposant des shootings photo, des retouches et l'impression d'albums photos. Basée en Île-de-France." />
-	<meta name="twitter:image" content="https://simongallien.github.io/OC_Projet_4/assets/images/nina_twitter_card.jpg" />
-	<meta name="twitter:url" content="https://simongallien.github.io/OC_Projet_4/" />
-	<!-- End of twitter card -->
-	<!-- Open Graph -->
-	<meta property="og:site_name" content="MonSiteWeb" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://monsiteweb.fr/ma-page-qui-dechire" />
-	<meta property="og:title" content="MonSiteWeb - Plein d'articles géniaux" />
-	<meta property="og:description" content="Découvrez plein d'articles qui vont vous plaire. C'est certain !" />
-	<meta property="og:image" content="https://monsiteweb/images/uneimage.jpg" />
-	<!-- End of Open Graph -->
-	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="./assets/style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
-	<meta charset="UTF-8">
-	<script src="./assets/bootstrap/bootstrap.bundle.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="./assets/maugallery.js"></script>
-	<script src="./assets/scripts.js"></script>
 </head>
 <body>
 <div class="top-header">
@@ -106,15 +107,15 @@
 	<h2 class="title">Portfolio</h2>
 	<div class="container py-3">
 		<div class="gallery" style="display: none">
-			<img data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp" alt="Photo d'ambiance lors d'un concert"/>
-			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp" alt="Portrait d'un homme d'affaire"/>
-			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp" alt="Jeune femme souriante au travail"/>
-			<img data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp" alt="Gros plan des mains d'un homme et d'une femme"/>
-			<img data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp" alt="Photo du visage d'un homme fermant les yeux"/>
-			<img data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp" alt="Photo de mariage"/>
-			<img data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.webp" alt="Portrait d’une jeune femme"/>
-			<img data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.webp" alt="Photo d'un chanteur lors de son concert"/>
-			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp" alt="Jeune femme s'amusant au travail"/>
+			<img data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp" alt="Photo d'ambiance lors d'un concert">
+			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp" alt="Portrait d'un homme d'affaire">
+			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp" alt="Jeune femme souriante au travail">
+			<img data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp" alt="Gros plan des mains d'un homme et d'une femme">
+			<img data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp" alt="Photo du visage d'un homme fermant les yeux">
+			<img data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp" alt="Photo de mariage">
+			<img data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.webp" alt="Portrait d’une jeune femme">
+			<img data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.webp" alt="Photo d'un chanteur lors de son concert">
+			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp" alt="Jeune femme s'amusant au travail">
 		</div>
 	</div>
 	<div class="quote">
@@ -175,14 +176,14 @@
 		<div class="form-container">
 			<h2>Une question ? Une demande de devis ?</h2>
 			<p> N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24 heures</p>
-			<form action="" method="post">
+			<form action="#" method="post">
 				<label for="nom">Nom</label>
 				<input type="text" name="nom" id="nom">
 				<label for="email">Email</label>
 				<input type="email" name="email" id="email">
 				<label for="message">Message</label>
 				<textarea name="message" id="message" cols="30" rows="10"></textarea>
-				<input type="submit" value="Envoyer"/>
+				<input type="submit" value="Envoyer">
 			</form>
 		</div>
 		<div class="picture right">

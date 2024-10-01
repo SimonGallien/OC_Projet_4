@@ -1,2 +1,5 @@
 .idea
 .DS_Store
+# Fichier bootstrap non minifiés
+# Fichier javascript non minifiés
+# Fichier css non minifiés
