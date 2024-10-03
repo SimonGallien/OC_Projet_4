@@ -1,8 +1,8 @@
 .idea
 .DS_Store
 # Fichier bootstrap non minifiés
-bootstrap.css
+# bootstrap.css
 # Fichier javascript non minifiés
-maugallery.js
+# maugallery.js
 # Fichier css non minifiés
-style.css
+# style.css

@@ -22,14 +22,14 @@
 	<meta property="og:image" content="https://simongallien.github.io/OC_Projet_4/assets/images/nina_twitter_card.jpg" >
 	<!-- End of Open Graph -->
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="./assets/style.min.css">
+	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/modal.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/5d6dcc7e2f.js" crossorigin="anonymous"></script>
 	<script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
-	<script src="./assets/maugallery.min.js" defer></script>
-	<script src="./assets/scripts.js" defer></script>
+	<script src="./assets/scriptPerso.js" defer></script>
 	<script type="application/ld+json" defer>
 		{
 			"@context": "https://schema.org",
@@ -102,30 +102,68 @@
 			C’est ce que je vous propose : saisir ces merveilleux moments au travers de mon regard, mon approche, ma technique. Rendre ces moments immortels, afin que vous puissiez y puiser de l’amour, du bonheur, de la tendresse et de lumière à chaque fois que vous poserez les yeux sur vos photos.</p>
 	</section>
 </article>
-<section id="gallery">
-	<h2 class="title">Portfolio</h2>
-	<div class="container py-3">
-		<div class="gallery" style="display: none">
-			<img data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp" alt="Photo d'ambiance lors d'un concert">
-			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp" alt="Portrait d'un homme d'affaire">
-			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp" alt="Jeune femme souriante au travail">
-			<img data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp" alt="Gros plan des mains d'un homme et d'une femme">
-			<img data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp" alt="Photo du visage d'un homme fermant les yeux">
-			<img data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp" alt="Photo de mariage">
-			<img data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.webp" alt="Portrait d’une jeune femme">
-			<img data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.webp" alt="Photo d'un chanteur lors de son concert">
-			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp" alt="Jeune femme s'amusant au travail">
-		</div>
+<div id="gallery">
+	<h3 class="title">Portfolio</h3>
+	<div class="gallery-filters">
+		<button id="0" class="gallery-button-filters active-filters">Tous</button>
+		<button id="1" class="gallery-button-filters">Concert</button>
+		<button id="2" class="gallery-button-filters">Entreprises</button>
+		<button id="3" class="gallery-button-filters">Mariages</button>
+		<button id="4" class="gallery-button-filters">Portrait</button>
+	</div>
+	<div class="gallery-grid">
+		<a href="#modal1" class="js-modal">
+			<img class="Concert" categoryId="1" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp" alt="Photo d'ambiance lors d'un concert">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Entreprises" categoryId="2" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp" alt="Portrait d'un homme d'affaire">
+		</a>
+		<a href="#modal1" class="js-modal">	
+			<img class="Entreprises" categoryId="2" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp" alt="Jeune femme souriante au travail">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Mariages" categoryId="3" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp" alt="Gros plan des mains d'un homme et d'une femme">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Portrait" categoryId="4" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp" alt="Photo du visage d'un homme fermant les yeux">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Mariages" categoryId="3" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp" alt="Photo de mariage">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Portrait" categoryId="4" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.webp" alt="Portrait d’une jeune femme">
+		</a>
+		<a href="#modal1" class="js-modal">	
+			<img class="Concert" categoryId="1" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.webp" alt="Photo d'un chanteur lors de son concert">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Entreprises" categoryId="2" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp" alt="Jeune femme s'amusant au travail">
+		</a>
 	</div>
 	<div class="quote">
 		<figure>
 			<blockquote>
-				<h1 class="quote__text">Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou qu’un fait est traduit en photo, il cesse d’être un fait pour devenir une opinion. L’inexactitude n’existe pas en photographie. Toutes les photos sont exactes. Aucune d’elles n’est la vérité.</h1>
+				<p class="quote__text">Un portrait n’est pas une ressemblance. Dès lors qu’une émotion ou qu’un fait est traduit en photo, il cesse d’être un fait pour devenir une opinion. L’inexactitude n’existe pas en photographie. Toutes les photos sont exactes. Aucune d’elles n’est la vérité.</p>
 			</blockquote>
 			<figcaption class="quote__author">- Richard Avedon</figcaption>
 		</figure>
 	</div>
-</section>
+</div>
+<aside id="modal1" class="modal" aria-hidden="true" role="dialog" style="display:none;">
+	<div class="icone-prev js-modal-stop">
+		<i class="fa-solid fa-chevron-left prev-image"></i>
+		 <!-- <p><</p> -->
+	</div>
+	<div class="modal-wrapper js-modal-stop">
+		<div class="js-image">
+			<!-- image chargé dynamiquement -->
+		</div>
+	</div>
+	<div class="icone-next js-modal-stop">
+		<i class="fa-solid fa-chevron-right next-image"></i>
+	</div>
+
+</aside>
 <section id="services">
 	<h2 class="title">Mes services</h2>
 	<div class="container">
@@ -164,7 +202,7 @@
 <div class="quote">
 	<figure>
 		<blockquote>
-			<h1 class="quote__text">De manière inconsciente, je crois, je guette un regard, une expression, des traits ou une nostalgie capable de résumer ou plus exactement de révéler une vie</h1>
+			<p class="quote__text">De manière inconsciente, je crois, je guette un regard, une expression, des traits ou une nostalgie capable de résumer ou plus exactement de révéler une vie</p>
 		</blockquote>
 		<figcaption class="quote__author">- Richard Avedon</figcaption>
 	</figure>
