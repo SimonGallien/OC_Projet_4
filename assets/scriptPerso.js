@@ -37,6 +37,8 @@ const openModal = function(event){
     modal.style.display = null
     modal.removeAttribute('aria-hidden')
     modal.setAttribute('aria-modal', 'true')
+    // Désactive le scroll de l'arrière-plan
+    document.body.classList.add('no-scroll');
     modal.addEventListener('click', closeModal)
     modal.querySelectorAll('.js-modal-stop').forEach(content => content.addEventListener('click', stopPropagation))
     showImage(event)
@@ -96,6 +98,8 @@ const closeModal = function (event){
     modal.style.display = "none"
     modal.setAttribute('aria-hidden', 'true')
     modal.removeAttribute('aria-modal')
+    // Réactive le scroll de l'arrière-plan
+    document.body.classList.remove('no-scroll');
     modal.removeEventListener('click', closeModal)
     modal.querySelectorAll('.js-modal-stop').forEach(content => content.removeEventListener('click', stopPropagation))
     modal.querySelector('.prev-image').removeEventListener('click', prevImage)
