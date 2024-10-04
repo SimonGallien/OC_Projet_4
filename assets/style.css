@@ -85,8 +85,9 @@ time, mark, audio, video {
 	z-index: 0;
 }
 
-.picture img {
+img {
 	width: 100%;
+	height: auto;
 
 }
 #about-me {
