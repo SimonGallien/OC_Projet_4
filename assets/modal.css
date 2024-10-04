@@ -1,15 +1,7 @@
-body, html {
-    margin: 0;
-    padding: 0;
-}
-
-* {
-    box-sizing: border-box;
-}
-
 .no-scroll {
     overflow: hidden; /* Empêche le scroll */
-    padding-right: 22px;
+    padding-right: 18px;
+    padding-top: 14px;
 }
 
 .modal {
