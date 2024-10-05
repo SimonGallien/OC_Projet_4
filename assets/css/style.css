@@ -130,7 +130,6 @@ body {
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	padding-bottom: 20px;
-	border: 1px solid black;
 }
 
 .gallery-grid img {
