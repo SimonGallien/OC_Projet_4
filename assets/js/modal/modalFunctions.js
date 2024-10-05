@@ -1,36 +1,13 @@
-const galleryButtonFilters = document.querySelectorAll(".gallery-button-filters")
-
-galleryButtonFilters.forEach(filter => {
-    filter.addEventListener("click", function(event){
-        event.preventDefault();
-
-        // Supprime la classe 'active-filters' de tous les boutons
-        galleryButtonFilters.forEach(btn => btn.classList.remove("active-filters"))
-
-        // Ajoute la classe 'active-filters' au bouton cliqué
-        filter.classList.add("active-filters");
-
-        const idFilter = event.target.id
-        const allGaleryImages = document.querySelectorAll(".gallery-grid img")
-        allGaleryImages.forEach(img => {
-            img.closest('a').style.display = 'none'
-            img.setAttribute('aria-hidden', 'true');
-            const categoryId = img.getAttribute("categoryId")
-            if (idFilter === categoryId) {
-                img.closest('a').style.display = null
-                img.removeAttribute('aria-hidden');
-            } else if (idFilter === "0") {
-                img.closest('a').style.display = null
-                img.removeAttribute('aria-hidden');
-            }
-        })
-    })
-})
-
-/*******************************************/
+/*****************************************************************/
+/*** Ce fichier contient les fonctions javascript de la modale ***/
+/*****************************************************************/
 let modal = null
 
-const openModal = function(event){
+/**
+ * Fonction principale
+ * @param {Event} event - L'événement déclenché par l'utilisateur
+ */
+export const openModal = function(event){
     event.preventDefault()
     const link = event.target.closest('a')
     modal = document.querySelector(link.getAttribute('href'))
@@ -46,6 +23,10 @@ const openModal = function(event){
     modal.querySelector('.next-image').addEventListener('click', nextImage)
 }
 
+/**
+ * Affiche l'image suivante lors du click sur l'icone '>'
+ * @param {Event} event - L'événement déclenché par l'utilisateur 
+ */
 const nextImage = function(event){
     event.preventDefault()
     // Trouver l'index de l'image dans la modal correspondant à la gallery
@@ -58,6 +39,10 @@ const nextImage = function(event){
     modal.querySelector('.js-image img').src = nextImage.src
 }
 
+/**
+ * Affiche l'image précédente lors du click sur l'icone '<'
+ * @param {Event} event - L'événement déclenché par l'utilisateur 
+ */
 const prevImage = function(event){
     event.preventDefault()
     // Trouver l'index de l'image dans la modal correspondant à la gallery
@@ -70,6 +55,10 @@ const prevImage = function(event){
     modal.querySelector('.js-image img').src = prevImage.src
 }
 
+/**
+ * Trouve l'index de l'image actuelle dans la modale dans la gallerie
+ * @returns {number} - Numéro de l'index de l'image dans la gallerie
+ */
 const findIndex = function() {
     const imageCollection = Array.from(document.querySelectorAll('.gallery-grid img'))
     let index = 0
@@ -81,8 +70,12 @@ const findIndex = function() {
     return index
 }
 
+/**
+ * Affiche l'image cliqué par l'utilisateur de la gallerie dans la modale
+ * @param {Event} event - L'événement déclenché par l'utilisateur
+ */
 const showImage = function(event){
-    targetImage = event.target
+    const targetImage = event.target
     const imageContainer = modal.querySelector('.js-image')
     if (imageContainer.querySelector('img')){
         imageContainer.querySelector('img').remove()
@@ -92,6 +85,11 @@ const showImage = function(event){
     imageContainer.appendChild(imageModal)
 }
 
+/**
+ * Ferme la modale et supprime les écouteurs
+ * @param {Event} event - L'événement déclenché par l'utilisateur
+ * @returns - Si la modale est null
+ */
 const closeModal = function (event){
     if (modal === null) return
     event.preventDefault()
@@ -107,10 +105,10 @@ const closeModal = function (event){
     modal = null
 }
 
+/**
+ * Stop la propagation pour éviter de fermer la modale lorsque l'utilisateur click à l'intérieur
+ * @param {Event} event - L'événement déclenché par l'utilisateur
+ */
 const stopPropagation = function (event)  {
     event.stopPropagation()
 }
-
-document.querySelectorAll('.js-modal').forEach(a => {
-    a.addEventListener('click', openModal)
-})
