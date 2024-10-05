@@ -44,6 +44,7 @@
     width: 30px;
     height: 30px;
     position: relative;
+    z-index: 1;
     animation: slideFromTop .5s both;
 }
 

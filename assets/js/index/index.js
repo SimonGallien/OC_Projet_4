@@ -22,14 +22,17 @@ galleryButtonFilters.forEach(filter => {
 
         allGaleryImages.forEach(img => {
             img.closest('a').style.display = 'none'
+            img.closest('a').setAttribute('aria-hidden', 'true');
             img.setAttribute('aria-hidden', 'true');
             const categoryId = img.getAttribute("categoryId")
             if (idFilter === categoryId) {
                 img.closest('a').style.display = null
-                img.removeAttribute('aria-hidden');
+                img.closest('a').setAttribute('aria-hidden', 'false');
+                img.setAttribute('aria-hidden', 'false');
             } else if (idFilter === "0") {
                 img.closest('a').style.display = null
-                img.removeAttribute('aria-hidden');
+                img.closest('a').setAttribute('aria-hidden', 'false');
+                img.setAttribute('aria-hidden', 'false');
             }
         })
     })

@@ -2,7 +2,7 @@
 /****** Ce fichier contient le code javascript de la modale ******/
 /*****************************************************************/
 
-import {openModal} from "./modalFunctions.min.js";
+import {openModal} from "./modalFunctions.js";
 
 console.log('modal.js chargé')
 
