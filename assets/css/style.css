@@ -119,7 +119,7 @@ body {
     background-color: #5F5926;
 }
 
-#gallery {
+#gallery, .quote {
 	max-width: 1320px;
 	margin: auto;
 }
@@ -145,7 +145,6 @@ body {
 .quote {
 	font-family: 'Spectral';
 	font-style: italic;
-	width: 70%;
 	margin: auto;
 	padding-block: 3em;
 }
@@ -251,13 +250,13 @@ input[type="submit"] {
 }
 
 @media (max-width: 1400px) {
-	#gallery {
+	#gallery, .quote {
 		max-width: 1140px;
 	}
 }
 
 @media (max-width: 1200px) {
-	#gallery {
+	#gallery, .quote {
 		max-width: 960px;
 	}
 }
@@ -338,7 +337,7 @@ input[type="submit"] {
 }
 
 @media (max-width: 992px) {
-	#gallery {
+	#gallery, .quote {
 		max-width: 720px;
 	}
 }
@@ -347,7 +346,7 @@ input[type="submit"] {
 	.gallery-grid {
 		grid-template-columns: 1fr 1fr;
 	}
-	#gallery {
+	#gallery, .quote {
 		max-width: 540px;
 	}
 }
@@ -389,7 +388,12 @@ input[type="submit"] {
 
 @media (max-width: 576px) {
 	.gallery-grid {
-		width: 100%;
 		grid-template-columns: 1fr;
+	}
+	#gallery {
+		width: 100%;
+	}
+	.quote{
+		width: 70%;
 	}
 }
