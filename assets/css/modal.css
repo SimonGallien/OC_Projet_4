@@ -48,9 +48,21 @@
     animation: slideFromTop .5s both;
 }
 
-.icone-prev p{
+.prev-image, .next-image {
     margin: 0;
-    font-size: 24px;
+    width: 15px;
+    height: 17px;
+    display: inline-block;
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+
+.prev-image {
+    background-image: url('../images/icons/chevron-left-solid.svg');
+}
+
+.next-image {
+    background-image: url('../images/icons/chevron-right-solid.svg');
 }
 
 .icone-next {
