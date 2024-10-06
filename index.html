@@ -3,15 +3,16 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/modal.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
+	<script src="https://kit.fontawesome.com/5d6dcc7e2f.js" crossorigin="anonymous"></script>
 	<script src="./assets/bootstrap/bootstrap.bundle.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="./assets/maugallery.js"></script>
-	<script src="./assets/scripts.js"></script>
+	<script type="module" src="./assets/script/index/index.js" defer></script>
+	<script type="module" src="./assets/script/modal/modal.js" defer></script>
 </head>
 <body>
 <div class="top-header">
@@ -68,18 +69,41 @@
 </div>
 <div id="gallery">
 	<h3 class="title">Portfolio</h3>
-	<div class="container py-3">
-		<div class="gallery" style="display: none">
-			<img data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.avif" alt="Photo d'ambiance lors d'un concert">
-			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.avif" alt="Portrait d'un homme d'affaire">
-			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.avif" alt="Jeune femme souriante au travail">
-			<img data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.avif" alt="Gros plan des mains d'un homme et d'une femme">
-			<img data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.avif" alt="Photo du visage d'un homme fermant les yeux">
-			<img data-gallery-tag="Mariages" class="gallery-item" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.avif" alt="Photo de mariage">
-			<img data-gallery-tag="Portrait" class="gallery-item" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.avif" alt="Portrait d’une jeune femme">
-			<img data-gallery-tag="Concert" class="gallery-item" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.avif" alt="Photo d'un chanteur lors de son concert">
-			<img data-gallery-tag="Entreprises" class="gallery-item" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.avif" alt="Jeune femme s'amusant au travail">
-		</div>
+	<div class="gallery-filters">
+		<button id="0" class="gallery-button-filters active-filters">Tous</button>
+		<button id="1" class="gallery-button-filters">Concert</button>
+		<button id="2" class="gallery-button-filters">Entreprises</button>
+		<button id="3" class="gallery-button-filters">Mariages</button>
+		<button id="4" class="gallery-button-filters">Portrait</button>
+	</div>
+	<div class="gallery-grid">
+		<a href="#modal1" class="js-modal">
+			<img class="Concert" categoryId="1" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.avif" alt="Photo d'ambiance lors d'un concert" aria-hidden="false">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Entreprises" categoryId="2" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.avif" alt="Portrait d'un homme d'affaire" aria-hidden="false">
+		</a>
+		<a href="#modal1" class="js-modal">	
+			<img class="Entreprises" categoryId="2" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.avif" alt="Jeune femme souriante au travail" aria-hidden="false">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Mariages" categoryId="3" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.avif" alt="Gros plan des mains d'un homme et d'une femme" aria-hidden="false">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Portrait" categoryId="4" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.avif" alt="Photo du visage d'un homme fermant les yeux" aria-hidden="false">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Mariages" categoryId="3" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.avif" alt="Photo de mariage" aria-hidden="false">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Portrait" categoryId="4" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.avif" alt="Portrait d’une jeune femme" aria-hidden="false">
+		</a>
+		<a href="#modal1" class="js-modal">	
+			<img class="Concert" categoryId="1" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.avif" alt="Photo d'un chanteur lors de son concert" aria-hidden="false">
+		</a>
+		<a href="#modal1" class="js-modal">
+			<img class="Entreprises" categoryId="2" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.avif" alt="Jeune femme s'amusant au travail" aria-hidden="false">
+		</a>
 	</div>
 	<div class="quote">
 		<figure>
@@ -90,6 +114,20 @@
 		</figure>
 	</div>
 </div>
+<aside id="modal1" class="modal" aria-hidden="true" role="dialog" style="display:none;">
+	<div class="icone-prev js-modal-stop">
+		<i class="fa-solid fa-chevron-left prev-image"></i>
+		 <!-- <p><</p> -->
+	</div>
+	<div class="modal-wrapper js-modal-stop">
+		<div class="js-image">
+			<!-- image chargé dynamiquement -->
+		</div>
+	</div>
+	<div class="icone-next js-modal-stop">
+		<i class="fa-solid fa-chevron-right next-image"></i>
+	</div>
+</aside>
 <div id="services">
 	<h3 class="title">Mes services</h3>
 	<div class="container">

@@ -85,56 +85,56 @@ body {
 	font-style: italic;
 	width: 60%;
 }
-#about-me p {
+#about-me .about-me__text {
 	width: 80%;
 	font-size: 14px;
 }
 
-#gallery {
-	/*	min-height: 100vh; */
-}
 .title{
 	text-align: center;
 	padding-block: 2em;
 }
-.gallery .nav {
-	justify-content: center;
-}
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
-	background-color: #BEB45A;
-	border-radius:0 ;
-}
-.nav-pills .nav-link {
-	color: #000
-}
-.item-column {
-	position: relative;
-	margin-bottom: 0 !important;
-	padding: 0;
-}
-.item-column::after{
-	content: "";
-	display: block;
-	padding-bottom: 100%;
 
-}
-.gallery-item {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	padding: .5em;
-}
-.mg-prev, .mg-next {
-	width: 30px;
-	height: 30px;
-	border-radius: 00%;
-	justify-content: center;
-	align-items: center;
+/****************************************************/
+/**************** La gallerie d'image ***************/
+/****************************************************/
+
+.gallery-filters {
 	display: flex;
-	font-size: 24px;
+	width: 100%;
+	justify-content: center;
+	margin: 50px 0px 24px 0px;
 }
+
+.gallery-button-filters {
+	padding : 8px 16px;
+	margin:0px 10px;
+	border: none;
+	background-color: white;
+}
+
+.active-filters {
+	color: #fff;
+    background-color: #5F5926;
+}
+
+.gallery-grid {
+	display: grid;
+	width: 1296px;
+	margin: auto;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	padding-bottom: 20px;
+}
+
+.gallery-grid img {
+	object-fit: cover;
+	width: 100%;
+	height: 440px;
+	padding: 8px;
+}
+/****************************************/
 
 .quote {
 	font-family: 'Spectral';
@@ -144,13 +144,13 @@ body {
 	padding-block: 3em;
 }
 .quote__text {
-	font-family: Spectral;
+	font-family: 'Spectral';
 	font-style: italic;
 	font-weight: 300;
 
 }
 .quote__author {
-	font-family: Spectral;
+	font-family: 'Spectral';
 	font-weight: 800;
 	font-size: 22px;
 }
@@ -255,7 +255,7 @@ input[type="submit"] {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me h6, #about-me p {
+	#about-me p {
 		width: 100%;
 	}
 }
@@ -353,4 +353,3 @@ input[type="submit"] {
 		width: 80%;
 	}
 }
-
