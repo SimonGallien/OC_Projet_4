@@ -1,3 +1,8 @@
+/* CSS pour désactiver le scroll */
+.no-scroll {
+    overflow: hidden;
+}
+
 .modal {
     position: fixed;
     display: flex;
