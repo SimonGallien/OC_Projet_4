@@ -190,6 +190,11 @@ body {
 	z-index: 1;
 }
 
+.service__price {
+	display: flex;
+	flex-direction: column;
+}
+
 #contact {
 	margin: auto;
 	background-color: #D8D3A8 ;
